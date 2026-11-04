@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pispisa L'Ottico · Ottica e optometria a Oristano e Arborea dal 1966</title>
+  <meta name="description" content="Pispisa L'Ottico: analisi optometrica, contattologia, ipovisione, ortottica e occhiali da vista e da sole. Tre punti vendita a Oristano e Arborea, dal 1966.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#E30613">
+  <link rel="icon" href="assets/img/logo-icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
+</head>
+<body>
+
+<!--
+  STRUTTURA PENSATA PER ELEMENTOR
+  - Ogni <section class="el-section"> = un Container (Flexbox) di primo livello.
+  - data-el="container|heading|text|button|image|icon-list|accordion|carousel|..." indica il widget nativo da usare.
+  - Le classi "pp-*" vanno riportate nel campo "Classi CSS" di Elementor per agganciare animazioni e stili custom.
+  Mappatura completa in ELEMENTOR-MAPPING.md
+-->
+
+<!-- Sprite SVG: logo icona "O'" (vettoriale) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pp-logo-icon" viewBox="0 0 100 100">
+    <circle cx="42" cy="58" r="33" fill="none" stroke="currentColor" stroke-width="14"/>
+    <path fill="currentColor" d="M87 4c6.6 0 11 4.9 11 11.2 0 10.4-7.6 19.4-17.6 23.6l-2-3.4c5-3 8-6.6 8.8-10.6-6.2-.4-10.2-4.6-10.2-10C77 8.6 81.4 4 87 4z"/>
+  </symbol>
+</svg>
+
+<a class="pp-skip" href="#main">Vai al contenuto</a>
+
+<!-- ============ HEADER (Theme Builder > Header, sticky) ============ -->
+<header class="pp-header" data-el="container" data-elementor="Theme Builder Header · Sticky: top · Effetti: Cambia sfondo allo scroll">
+  <div class="pp-header__inner">
+    <div class="pp-header__left">
+      <button class="pp-burger" aria-label="Apri il menu" aria-expanded="false" aria-controls="pp-menu" data-el="button / Off-canvas trigger">
+        <span></span><span></span><span></span>
+      </button>
+      <span class="pp-header__label">Menu</span>
+    </div>
+
+    <a class="pp-logo" href="#top" aria-label="Pispisa L'Ottico, torna alla home" data-el="image (Site Logo)">
+      <svg class="pp-logo__icon"><use href="#pp-logo-icon"/></svg>
+      <span class="pp-logo__text">PISPISA <em>l'</em>OTTICO</span>
+    </a>
+
+    <div class="pp-header__right">
+      <a class="pp-header__phone" href="tel:+39078372504" data-el="icon-box / button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+        <span>0783 72504</span>
+      </a>
+      <a class="pp-btn pp-btn--primary pp-btn--sm" href="#contatti" data-el="button">Prenota una visita</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MENU OFF-CANVAS (Elementor Off-Canvas / Popup) ============ -->
+<div class="pp-menu" id="pp-menu" aria-hidden="true" data-el="container (Off-Canvas widget o Popup full-screen)">
+  <div class="pp-menu__bg"></div>
+  <div class="pp-menu__inner">
+    <nav class="pp-menu__nav" aria-label="Menu principale" data-el="nav-menu (verticale)">
+      <a href="#top"><span>01</span>Home</a>
+      <a href="#servizi"><span>02</span>Servizi</a>
+      <a href="#chi-siamo"><span>03</span>Chi siamo</a>
+      <a href="#punti-vendita"><span>04</span>Punti vendita</a>
+      <a href="#faq"><span>05</span>Domande frequenti</a>
+      <a href="#contatti"><span>06</span>Contatti</a>
+    </nav>
+    <aside class="pp-menu__aside">
+      <p class="pp-eyebrow">I nostri negozi</p>
+      <ul class="pp-menu__stores" data-el="icon-list">
+        <li><strong>Oristano</strong> Via Umberto I, 29 · <a href="tel:+39078372504">0783 72504</a></li>
+        <li><strong>Oristano</strong> Viale A. Diaz, 68 · <a href="tel:+39078371558">0783 71558</a></li>
+        <li><strong>Arborea</strong> Via Genova, 11 · <a href="tel:+390783802019">0783 802019</a></li>
+      </ul>
+      <a class="pp-btn pp-btn--primary" href="#contatti">Prenota una visita</a>
+      <a class="pp-menu__wa" href="https://wa.me/393453430074">Scrivici su WhatsApp</a>
+    </aside>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="el-section pp-hero" id="top" data-el="container (2 colonne)">
+    <div class="pp-container pp-hero__grid">
+      <div class="pp-hero__content" data-el="container">
+        <p class="pp-eyebrow pp-hero__eyebrow" data-el="text-editor">Ottica · Optometria · Contattologia dal 1966</p>
+        <h1 class="pp-hero__title pp-split" data-el="heading (H1)">Vedere bene significa <span class="pp-accent">vivere meglio</span></h1>
+        <h2 class="pp-hero__subtitle" data-el="heading (H2)">Analisi della vista, lenti a contatto e occhiali su misura, con la cura di chi ti conosce da tre generazioni. A Oristano e Arborea.</h2>
+        <div class="pp-hero__ctas" data-el="container (riga)">
+          <a class="pp-btn pp-btn--primary" href="#contatti" data-el="button">Prenota il check-up gratuito</a>
+          <a class="pp-btn pp-btn--ghost" href="#servizi" data-el="button">Scopri i servizi
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <ul class="pp-hero__facts" data-el="counter × 3">
+          <li><strong data-count="60">60</strong><span>anni di esperienza</span></li>
+          <li><strong data-count="3">3</strong><span>punti vendita</span></li>
+          <li><strong data-count="360" data-suffix="°">360°</strong><span>cura della vista</span></li>
+        </ul>
+      </div>
+
+      <div class="pp-hero__media" data-el="container (immagine con maschera)">
+        <svg class="pp-hero__ring" aria-hidden="true"><use href="#pp-logo-icon"/></svg>
+        <figure class="pp-mask pp-hero__img" data-el="image · Maschera: forma personalizzata (logo-mask.svg)">
+          <img src="assets/img/getty/hero-2209045268.jpg" alt="Cliente sorridente con la montatura di prova mentre l'optometrista regola le lenti" width="1200" height="1200">
+        </figure>
+        <div class="pp-hero__badge" data-el="icon-box">
+          <span class="pp-hero__badge-num">1966</span>
+          <span>Da tre generazioni<br>a Oristano</span>
+        </div>
+      </div>
+    </div>
+    <a class="pp-scroll-hint" href="#servizi" aria-label="Scorri ai servizi"><span></span></a>
+  </section>
+
+  <!-- Nastro di parole chiave (Elementor: Marquee / Text Path oppure container con animazione CSS) -->
+  <div class="pp-marquee" aria-hidden="true" data-el="html o marquee">
+    <div class="pp-marquee__track">
+      <span>Analisi optometrica</span><i></i><span>Contattologia</span><i></i><span>Ipovisione</span><i></i><span>Ortottica</span><i></i><span>Test aberrometrico</span><i></i><span>Occhiali da sole</span><i></i>
+      <span>Analisi optometrica</span><i></i><span>Contattologia</span><i></i><span>Ipovisione</span><i></i><span>Ortottica</span><i></i><span>Test aberrometrico</span><i></i><span>Occhiali da sole</span><i></i>
+    </div>
+  </div>
+
+  <!-- ============ 2. SERVIZI · carosello a scroll orizzontale ============ -->
+  <section class="el-section pp-services" id="servizi" data-el="container · classe pp-hscroll (pin + scroll orizzontale via GSAP)">
+    <div class="pp-services__pin">
+      <div class="pp-container pp-services__head">
+        <div>
+          <p class="pp-eyebrow" data-el="text-editor">Cura della vista a 360°</p>
+          <h2 class="pp-h2" data-el="heading (H2)">Servizi pensati <br>sui tuoi occhi</h2>
+        </div>
+        <div class="pp-services__head-right">
+          <p data-el="text-editor">Dal controllo di routine all'analisi più approfondita: strumenti diagnostici all'avanguardia e professionisti che ti spiegano ogni risultato con chiarezza.</p>
+          <div class="pp-services__progress" aria-hidden="true"><span></span></div>
+        </div>
+      </div>
+
+      <div class="pp-services__viewport">
+        <ul class="pp-services__track" data-el="loop-carousel o carousel (slide = card)">
+          <li class="pp-card">
+            <figure class="pp-card__img"><img src="assets/img/getty/srv-optometria-1282515053.jpg" alt="Esame della vista di una paziente con il forottero" loading="lazy"></figure>
+            <div class="pp-card__body">
+              <span class="pp-card__icon" data-el="icon (SVG: assets/icons/ic-optometria.svg)"><svg aria-hidden="true"><use href="assets/icons/icons.svg#ic-optometria"/></svg></span>
+              <span class="pp-card__num">01</span>
+              <h3>Analisi optometrica</h3>
+              <p>Esame completo della vista, pressione oculare, test aberrometrico e funzione binoculare.</p>
+              <a class="pp-card__link" href="#contatti">Prenota l'analisi</a>
+            </div>
+          </li>
+          <li class="pp-card">
+            <figure class="pp-card__img"><img src="assets/img/getty/srv-contattologia-95467608.jpg" alt="Lente a contatto sulla punta di un dito" loading="lazy"></figure>
+            <div class="pp-card__body">
+              <span class="pp-card__icon" data-el="icon (SVG: assets/icons/ic-contattologia.svg)"><svg aria-hidden="true"><use href="assets/icons/icons.svg#ic-contattologia"/></svg></span>
+              <span class="pp-card__num">02</span>
+              <h3>Contattologia</h3>
+              <p>Lenti morbide, progressive e RGP, con prova gratuita e adattamento graduale.</p>
+              <a class="pp-card__link" href="#contatti">Prova le lenti</a>
+            </div>
+          </li>
+          <li class="pp-card pp-card--featured">
+            <figure class="pp-card__img"><img src="assets/img/getty/srv-myocare-1450677481.jpg" alt="Bambina sorridente con i suoi occhiali da vista" loading="lazy"></figure>
+            <div class="pp-card__body">
+              <span class="pp-card__icon" data-el="icon (SVG: assets/icons/ic-myocare.svg)"><svg aria-hidden="true"><use href="assets/icons/icons.svg#ic-myocare"/></svg></span>
+              <span class="pp-card__num">03</span>
+              <span class="pp-tag">Novità</span>
+              <h3>ZEISS MyoCare per bambini</h3>
+              <p>Lenti che aiutano a gestire la progressione della miopia nei più piccoli.</p>
+              <a class="pp-card__link" href="#contatti">Scopri MyoCare</a>
+            </div>
+          </li>
+          <li class="pp-card">
+            <figure class="pp-card__img"><img src="assets/img/getty/srv-ipovisione-1709960930.jpg" alt="Donna anziana che legge un libro con la lente d'ingrandimento" loading="lazy"></figure>
+            <div class="pp-card__body">
+              <span class="pp-card__icon" data-el="icon (SVG: assets/icons/ic-ipovisione.svg)"><svg aria-hidden="true"><use href="assets/icons/icons.svg#ic-ipovisione"/></svg></span>
+              <span class="pp-card__num">04</span>
+              <h3>Ipovisione</h3>
+              <p>Ausili ottici ed elettronici personalizzati, in collaborazione con oculisti e centri di riabilitazione.</p>
+              <a class="pp-card__link" href="#contatti">Parlane con noi</a>
+            </div>
+          </li>
+          <li class="pp-card">
+            <figure class="pp-card__img"><img src="assets/img/getty/srv-ortottica-2153690117.jpg" alt="Bambino con la montatura di prova durante il controllo della vista" loading="lazy"></figure>
+            <div class="pp-card__body">
+              <span class="pp-card__icon" data-el="icon (SVG: assets/icons/ic-ortottica.svg)"><svg aria-hidden="true"><use href="assets/icons/icons.svg#ic-ortottica"/></svg></span>
+              <span class="pp-card__num">05</span>
+              <h3>Ortottica</h3>
+              <p>Percorsi per strabismo e ambliopia (occhio pigro), con esercizi su misura.</p>
+              <a class="pp-card__link" href="#contatti">Richiedi una valutazione</a>
+            </div>
+          </li>
+          <li class="pp-card">
+            <figure class="pp-card__img"><img src="assets/img/getty/srv-occhiali-2210183868.jpg" alt="Giovane donna che sceglie gli occhiali dagli scaffali di un negozio di ottica" loading="lazy"></figure>
+            <div class="pp-card__body">
+              <span class="pp-card__icon" data-el="icon (SVG: assets/icons/ic-occhiali.svg)"><svg aria-hidden="true"><use href="assets/icons/icons.svg#ic-occhiali"/></svg></span>
+              <span class="pp-card__num">06</span>
+              <h3>Occhiali da vista e da sole</h3>
+              <p>Consulenza all'acquisto per scegliere montatura e lenti adatte al tuo viso e al tuo stile di vita.</p>
+              <a class="pp-card__link" href="#punti-vendita">Vieni a provarli</a>
+            </div>
+          </li>
+          <li class="pp-card">
+            <figure class="pp-card__img"><img src="assets/img/getty/srv-assistenza-889766038.jpg" alt="Mani di un ottico che ripara un paio di occhiali con una pinza" loading="lazy"></figure>
+            <div class="pp-card__body">
+              <span class="pp-card__icon" data-el="icon (SVG: assets/icons/ic-assistenza.svg)"><svg aria-hidden="true"><use href="assets/icons/icons.svg#ic-assistenza"/></svg></span>
+              <span class="pp-card__num">07</span>
+              <h3>Assistenza e riparazioni</h3>
+              <p>Regolazioni, manutenzione e riparazioni veloci di occhiali e lenti a contatto.</p>
+              <a class="pp-card__link" href="#punti-vendita">Trova il negozio</a>
+            </div>
+          </li>
+          <li class="pp-card">
+            <figure class="pp-card__img"><img src="assets/img/getty/srv-accessori-951633972.jpg" alt="Binocolo nero con tracolla su sfondo bianco" loading="lazy"></figure>
+            <div class="pp-card__body">
+              <span class="pp-card__icon" data-el="icon (SVG: assets/icons/ic-accessori.svg)"><svg aria-hidden="true"><use href="assets/icons/icons.svg#ic-accessori"/></svg></span>
+              <span class="pp-card__num">08</span>
+              <h3>Accessori ottici</h3>
+              <p>Binocoli, lenti d'ingrandimento e telescopi, dal principiante all'astrofilo.</p>
+              <a class="pp-card__link" href="#punti-vendita">Chiedi un consiglio</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTERRUZIONE 1 · full width, bg parallax + overlay ============ -->
+  <section class="el-section pp-break" data-el="container full width · Sfondo: immagine · Overlay: colore + opacità · Effetti di movimento: scorrimento verticale">
+    <div class="pp-break__bg" style="background-image:url('assets/img/getty/break-strumenti-899312460.jpg')"></div>
+    <div class="pp-break__overlay pp-break__overlay--black"></div>
+    <div class="pp-container pp-break__content">
+      <p class="pp-eyebrow pp-eyebrow--light">La nostra promessa</p>
+      <p class="pp-break__quote pp-split" data-el="heading (H2 stile display)">Oltre mezzo secolo di dedizione verso la tua visione.</p>
+    </div>
+  </section>
+
+  <!-- ============ 3. CHI SIAMO ============ -->
+  <section class="el-section pp-about" id="chi-siamo" data-el="container (2 colonne)">
+    <div class="pp-container pp-about__grid">
+      <div class="pp-about__media" data-el="container">
+        <figure class="pp-mask pp-about__img" data-el="image · Maschera: logo-mask.svg">
+          <img src="assets/img/getty/about-1093946530.jpg" alt="Mani di un ottico che controlla un paio di occhiali in laboratorio" loading="lazy">
+        </figure>
+        <div class="pp-about__stamp" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs><path id="pp-circle-text" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+            <text><textPath href="#pp-circle-text">PISPISA L'OTTICO · DAL 1966 · ORISTANO · ARBOREA · </textPath></text>
+          </svg>
+          <svg class="pp-about__stamp-icon"><use href="#pp-logo-icon"/></svg>
+        </div>
+      </div>
+
+      <div class="pp-about__content" data-el="container">
+        <p class="pp-eyebrow" data-el="text-editor">Chi siamo</p>
+        <h2 class="pp-h2" data-el="heading (H2)">Dal 1966, la vista di Oristano è di famiglia</h2>
+        <div class="pp-about__text" data-el="text-editor">
+          <p>Tutto è iniziato in un piccolo negozio nel cuore di Oristano. Da allora la nostra missione non è cambiata: garantire a ciascun cliente una visione perfetta e il massimo comfort visivo.</p>
+          <p>Oggi siamo un team affiatato di ottici, optometristi e contattologi. Ogni anno investiamo in strumenti diagnostici all'avanguardia, ma il nostro metodo resta lo stesso: ascoltarti, spiegarti e seguirti anche dopo l'acquisto.</p>
+        </div>
+
+        <ol class="pp-timeline" data-el="container × 4 (oppure widget Timeline / icon-list)">
+          <li><span class="pp-timeline__year">1966</span><p>Apre il primo piccolo negozio a Oristano.</p></li>
+          <li><span class="pp-timeline__year">1984</span><p>Ci trasferiamo in uno spazio di oltre 200 mq.</p></li>
+          <li><span class="pp-timeline__year">2000</span><p>Iniziano gli investimenti annuali in tecnologie diagnostiche.</p></li>
+          <li><span class="pp-timeline__year">Oggi</span><p>Tre punti vendita e un team di specialisti della visione.</p></li>
+        </ol>
+
+        <a class="pp-btn pp-btn--dark" href="#punti-vendita" data-el="button">Vieni a conoscerci</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTERRUZIONE 2 · CTA screening ============ -->
+  <section class="el-section pp-break pp-break--cta" data-el="container full width · Sfondo immagine + overlay rosso">
+    <div class="pp-break__bg" style="background-image:url('assets/img/getty/break-famiglia-1492423100-flip.jpg')"></div>
+    <div class="pp-break__overlay pp-break__overlay--red"></div>
+    <div class="pp-container pp-break__content pp-break__content--split">
+      <div>
+        <p class="pp-eyebrow pp-eyebrow--light">Screening gratuito</p>
+        <p class="pp-break__quote" data-el="heading (H2)">Quando hai controllato la vista l'ultima volta?</p>
+      </div>
+      <div class="pp-break__side">
+        <p data-el="text-editor">Per chi guida, per chi lavora al computer, per i bambini che iniziano la scuola. Prenota il check-up gratuito ed evita le attese.</p>
+        <a class="pp-btn pp-btn--light" href="#contatti" data-el="button">Prenota ora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. PUNTI VENDITA ============ -->
+  <section class="el-section pp-stores" id="punti-vendita" data-el="container">
+    <div class="pp-container">
+      <div class="pp-section-head" data-el="container">
+        <p class="pp-eyebrow">Punti vendita</p>
+        <h2 class="pp-h2">Tre negozi, <br>la stessa cura</h2>
+        <p class="pp-section-head__lead">Scegli quello più comodo per te: in ogni sede trovi lo stesso team e gli stessi servizi.</p>
+      </div>
+
+      <div class="pp-stores__grid" data-el="container griglia 3 colonne (su mobile: carosello)">
+        <article class="pp-store" data-el="container (card)">
+          <figure class="pp-mask pp-store__img" data-el="image · Maschera logo"><img src="assets/img/getty/store-umberto-1426660425.jpg" alt="Interno di un moderno negozio di ottica con vetrine di occhiali" loading="lazy"></figure>
+          <div class="pp-store__body">
+            <p class="pp-store__city"><svg class="pp-ic" aria-hidden="true"><use href="assets/icons/icons.svg#ic-pin"/></svg>Oristano · Centro</p>
+            <h3>Via Umberto I, 29</h3>
+            <p class="pp-store__label"><svg class="pp-ic" aria-hidden="true"><use href="assets/icons/icons.svg#ic-clock"/></svg>Orari</p>
+            <ul class="pp-store__hours" data-el="icon-list / price-list">
+              <li><span>Lun–Ven</span><span>09:00–13:00 · 17:00–20:00</span></li>
+              <li><span>Sabato</span><span>09:30–13:00</span></li>
+              <li><span>Domenica</span><span>Chiuso</span></li>
+            </ul>
+            <div class="pp-store__actions">
+              <a class="pp-btn pp-btn--primary pp-btn--sm" href="tel:+39078372504">0783 72504</a>
+              <a class="pp-link" href="https://maps.app.goo.gl/8GFqFm4mGfqRTw4Z7" target="_blank" rel="noopener">Indicazioni</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pp-store">
+          <figure class="pp-mask pp-store__img"><img src="assets/img/getty/store-diaz-1394673177.jpg" alt="Ampio negozio di ottica luminoso con espositori di montature" loading="lazy"></figure>
+          <div class="pp-store__body">
+            <p class="pp-store__city"><svg class="pp-ic" aria-hidden="true"><use href="assets/icons/icons.svg#ic-pin"/></svg>Oristano</p>
+            <h3>Viale Armando Diaz, 68</h3>
+            <p class="pp-store__label"><svg class="pp-ic" aria-hidden="true"><use href="assets/icons/icons.svg#ic-clock"/></svg>Orari</p>
+            <ul class="pp-store__hours">
+              <li><span>Lun–Ven</span><span>08:30–13:00 · 17:00–20:00</span></li>
+              <li><span>Sabato</span><span>08:00–13:00</span></li>
+              <li><span>Domenica</span><span>Chiuso</span></li>
+            </ul>
+            <div class="pp-store__actions">
+              <a class="pp-btn pp-btn--primary pp-btn--sm" href="tel:+39078371558">0783 71558</a>
+              <a class="pp-link" href="https://www.google.com/maps/search/?api=1&amp;query=Viale+Armando+Diaz+68+Oristano" target="_blank" rel="noopener">Indicazioni</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pp-store">
+          <figure class="pp-mask pp-store__img"><img src="assets/img/getty/store-arborea-1306196770.jpg" alt="Espositore di occhiali da sole su mensole illuminate" loading="lazy"></figure>
+          <div class="pp-store__body">
+            <p class="pp-store__city"><svg class="pp-ic" aria-hidden="true"><use href="assets/icons/icons.svg#ic-pin"/></svg>Arborea</p>
+            <h3>Via Genova, 11</h3>
+            <p class="pp-store__label"><svg class="pp-ic" aria-hidden="true"><use href="assets/icons/icons.svg#ic-clock"/></svg>Orari</p>
+            <ul class="pp-store__hours">
+              <li><span>Lun–Ven</span><span>09:00–13:00 · 16:30–19:30</span></li>
+              <li><span>Sabato</span><span>09:00–13:00</span></li>
+              <li><span>Domenica</span><span>Chiuso</span></li>
+            </ul>
+            <div class="pp-store__actions">
+              <a class="pp-btn pp-btn--primary pp-btn--sm" href="tel:+390783802019">0783 802019</a>
+              <a class="pp-link" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Genova+11+Arborea" target="_blank" rel="noopener">Indicazioni</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTERRUZIONE 3 ============ -->
+  <section class="el-section pp-break pp-break--short" data-el="container full width · Sfondo immagine + overlay scuro">
+    <div class="pp-break__bg" style="background-image:url('assets/img/getty/break-espositore-1306196833.jpg')"></div>
+    <div class="pp-break__overlay pp-break__overlay--dark"></div>
+    <div class="pp-container pp-break__content">
+      <p class="pp-break__quote pp-split">Esperienza, innovazione e personalizzazione per una visione perfetta.</p>
+    </div>
+  </section>
+
+  <!-- ============ 5. FAQ ============ -->
+  <section class="el-section pp-faq" id="faq" data-el="container (2 colonne)">
+    <div class="pp-container pp-faq__grid">
+      <div class="pp-faq__intro" data-el="container (sticky)">
+        <p class="pp-eyebrow">Domande frequenti</p>
+        <h2 class="pp-h2">Hai un dubbio? <br>Ecco le risposte</h2>
+        <p>Non trovi quello che cerchi? Chiamaci o scrivici su WhatsApp, ti rispondiamo noi.</p>
+        <a class="pp-btn pp-btn--ghost" href="https://wa.me/393453430074">Scrivici su WhatsApp</a>
+      </div>
+
+      <div class="pp-faq__list" data-el="accordion (nativo, con FAQ Schema attivo)">
+        <details class="pp-faq__item" open>
+          <summary>Quanto dura un'analisi optometrica completa?<i></i></summary>
+          <div class="pp-faq__answer"><p>In genere tra i 30 e i 45 minuti. Comprende l'esame della vista, la misurazione della pressione oculare, il test aberrometrico e la valutazione della visione binoculare. Alla fine ti spieghiamo i risultati con calma.</p></div>
+        </details>
+        <details class="pp-faq__item">
+          <summary>Il check-up della vista è davvero gratuito?<i></i></summary>
+          <div class="pp-faq__answer"><p>Sì, lo screening visivo è gratuito e senza impegno. Ti consigliamo di prenotare per evitare attese.</p></div>
+        </details>
+        <details class="pp-faq__item">
+          <summary>Posso provare le lenti a contatto prima di acquistarle?<i></i></summary>
+          <div class="pp-faq__answer"><p>Certo. Offriamo una prova gratuita con adattamento progressivo e controlli periodici, per lenti morbide, multifocali e rigide gas permeabili.</p></div>
+        </details>
+        <details class="pp-faq__item">
+          <summary>Da che età si può fare un controllo della vista ai bambini?<i></i></summary>
+          <div class="pp-faq__answer"><p>Già in età prescolare è utile un primo controllo. Per i bambini miopi proponiamo anche le lenti ZEISS MyoCare, pensate per gestire la progressione della miopia.</p></div>
+        </details>
+        <details class="pp-faq__item">
+          <summary>Riparate occhiali acquistati altrove?<i></i></summary>
+          <div class="pp-faq__answer"><p>Sì, il nostro servizio di assistenza si occupa di regolazioni, piccole riparazioni e sostituzione di componenti anche su occhiali non acquistati da noi.</p></div>
+        </details>
+        <details class="pp-faq__item">
+          <summary>Serve la prescrizione dell'oculista per fare gli occhiali?<i></i></summary>
+          <div class="pp-faq__answer"><p>Non sempre: i nostri optometristi possono misurare la tua vista. Se emergono situazioni che richiedono un approfondimento medico, ti indirizziamo all'oculista.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. CTA CONTATTI ============ -->
+  <section class="el-section pp-contact" id="contatti" data-el="container">
+    <div class="pp-container pp-contact__box">
+      <svg class="pp-contact__icon" aria-hidden="true"><use href="#pp-logo-icon"/></svg>
+      <div class="pp-contact__text">
+        <p class="pp-eyebrow pp-eyebrow--light">Pronto a tornare a vedere bene?</p>
+        <h2 class="pp-h2">Prenota la tua visita</h2>
+        <p>Scegli il negozio più vicino e chiamaci, oppure lascia i tuoi dati e ti richiamiamo noi.</p>
+      </div>
+      <form class="pp-form" data-el="form (Elementor Pro) o Fluent Forms" onsubmit="event.preventDefault();this.classList.add('is-sent')">
+        <label><span>Nome e cognome</span><input type="text" name="nome" required autocomplete="name"></label>
+        <label><span>Telefono</span><input type="tel" name="telefono" required autocomplete="tel"></label>
+        <label><span>Negozio</span>
+          <select name="sede"><option>Oristano · Via Umberto I</option><option>Oristano · Viale Diaz</option><option>Arborea · Via Genova</option></select>
+        </label>
+        <label class="pp-form__check"><input type="checkbox" required> <span>Ho letto la <a href="#">privacy policy</a></span></label>
+        <button class="pp-btn pp-btn--light" type="submit">Richiamami</button>
+        <p class="pp-form__ok">Grazie! Ti richiameremo al più presto.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER (Theme Builder > Footer) ============ -->
+<footer class="pp-footer" data-el="Theme Builder Footer">
+  <div class="pp-container">
+    <div class="pp-footer__top">
+      <a class="pp-logo pp-logo--footer" href="#top" aria-label="Pispisa L'Ottico">
+        <svg class="pp-logo__icon"><use href="#pp-logo-icon"/></svg>
+        <span class="pp-logo__text">PISPISA <em>l'</em>OTTICO</span>
+      </a>
+      <p class="pp-footer__claim">Oltre mezzo secolo di dedizione verso la tua visione.</p>
+    </div>
+
+    <div class="pp-footer__cols">
+      <div data-el="nav-menu">
+        <h4>Navigazione</h4>
+        <ul>
+          <li><a href="#servizi">Servizi</a></li>
+          <li><a href="#chi-siamo">Chi siamo</a></li>
+          <li><a href="#punti-vendita">Punti vendita</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </div>
+      <div data-el="nav-menu">
+        <h4>Servizi</h4>
+        <ul>
+          <li><a href="#servizi">Analisi optometrica</a></li>
+          <li><a href="#servizi">Contattologia</a></li>
+          <li><a href="#servizi">Ipovisione</a></li>
+          <li><a href="#servizi">Ortottica</a></li>
+          <li><a href="#servizi">ZEISS MyoCare</a></li>
+        </ul>
+      </div>
+      <div data-el="icon-list">
+        <h4>Negozi</h4>
+        <ul>
+          <li>Via Umberto I, 29 · Oristano<br><a href="tel:+39078372504">0783 72504</a></li>
+          <li>Viale A. Diaz, 68 · Oristano<br><a href="tel:+39078371558">0783 71558</a></li>
+          <li>Via Genova, 11 · Arborea<br><a href="tel:+390783802019">0783 802019</a></li>
+        </ul>
+      </div>
+      <div data-el="icon-list + social-icons">
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="mailto:pispisaottica@gmail.com">pispisaottica@gmail.com</a></li>
+          <li><a href="https://wa.me/393453430074">WhatsApp 345 343 0074</a></li>
+        </ul>
+        <div class="pp-social">
+          <a href="https://www.facebook.com/pispisaoristano/" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8c-.1-1.6-.4-3-1.6-4.2S16.6 2.1 15 2c-1.6-.1-6.4-.1-8 0-1.6.1-3 .4-4.2 1.6S1.1 6.4 1 8c-.1 1.6-.1 6.4 0 8 .1 1.6.4 3 1.6 4.2S5.4 21.9 7 22c1.6.1 6.4.1 8 0 1.6-.1 3-.4 4.2-1.6S20.9 17.6 21 16c.1-1.6.1-6.4 0-8z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pp-footer__bottom">
+      <p>© <span data-year>2026</span> Pispisa L'Ottico · P.IVA 00000000000</p>
+      <nav class="pp-footer__legal" aria-label="Menu legale" data-el="nav-menu (orizzontale)">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#" data-cookie-prefs>Preferenze cookie</a>
+        <a href="#">Note legali</a>
+        <a href="#">Accessibilità</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/main.js?v=5"></script>
+</body>
+</html>
