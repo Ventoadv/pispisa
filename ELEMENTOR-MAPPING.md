@@ -25,7 +25,7 @@ Breakpoint: tablet 1024, mobile 767 (uguali ai default Elementor).
 ## Sezioni
 | # | Sezione (classe) | Struttura Elementor | Widget nativi |
 |---|---|---|---|
-| H | Header `pp-header` | Theme Builder > Header, Container 3 colonne. *Effetti di movimento > Sticky: In alto*, *Scorrimento: nascondi allo scroll in giù* (o JS incluso) | Off-Canvas (trigger hamburger), Site Logo, Pulsante, Icon Box (telefono) |
+| H | Header `pp-header` | Theme Builder > Header, Container 3 colonne a pillola con effetto liquid glass (CSS personalizzato: `.pp-header__inner`). *Effetti di movimento > Sticky: In alto*, *Scorrimento: nascondi allo scroll in giù* (o JS incluso) | Off-Canvas (trigger hamburger), Site Logo, Pulsante, Icon Box (telefono) |
 | M | Menu `pp-menu` | Widget **Off-Canvas** (Elementor 3.2x) a tutto schermo, oppure Popup full-screen | Nav Menu verticale, Icon List (negozi), Pulsante |
 | 1 | Hero `pp-hero` | Container 2 colonne | Heading H1 (`pp-hero__title pp-split`), Heading H2, 2 Pulsanti, 3 Counter, Immagine con maschera (`pp-hero__img`), Icon Box (badge 1966) |
 | – | Nastro `pp-marquee` | Container full width rosso | Widget HTML o Testo (animazione CSS inclusa) |

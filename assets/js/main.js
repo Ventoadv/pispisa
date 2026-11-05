@@ -159,6 +159,29 @@
   gsap.to('.pp-hero__ring', { rotate: 50, yPercent: -20, ease: 'none', scrollTrigger: { trigger: '.pp-hero', start: 'top top', end: 'bottom top', scrub: true } });
   gsap.to('.pp-hero__content', { yPercent: -10, opacity: .3, ease: 'none', scrollTrigger: { trigger: '.pp-hero', start: 'center center', end: 'bottom top', scrub: true } });
 
+  /* Header: riflesso del vetro che segue il puntatore */
+  var pill = document.querySelector('.pp-header__inner');
+  if (pill && window.matchMedia('(hover: hover)').matches) {
+    var mxFrame = null;
+    var mxState = { v: 30 };
+    var setMx = function () { pill.style.setProperty('--mx', mxState.v + '%'); };
+    pill.addEventListener('pointermove', function (e) {
+      if (mxFrame) return;
+      var cx = e.clientX;
+      mxFrame = requestAnimationFrame(function () {
+        mxFrame = null;
+        var r = pill.getBoundingClientRect();
+        gsap.killTweensOf(mxState);
+        mxState.v = (cx - r.left) / r.width * 100;
+        setMx();
+      });
+    });
+    pill.addEventListener('pointerleave', function () {
+      if (mxFrame) { cancelAnimationFrame(mxFrame); mxFrame = null; }
+      gsap.to(mxState, { v: 30, duration: .8, ease: 'power2.out', overwrite: true, onUpdate: setMx });
+    });
+  }
+
   /* Marquee: velocità legata allo scroll */
   var marquee = document.querySelector('.pp-marquee__track');
   if (marquee) {
