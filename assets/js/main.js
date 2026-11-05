@@ -33,17 +33,10 @@
     else window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY + offset, behavior: reduceMotion ? 'auto' : 'smooth' });
   }
 
-  /* ---------- Header sticky: sfondo + hide on scroll down / show on scroll up ---------- */
-  var lastY = window.scrollY;
+  /* ---------- Header sempre visibile: variante compatta dopo i primi 40px ---------- */
   function onScroll() {
-    var y = window.scrollY;
     if (!header) return;
-    header.classList.toggle('is-scrolled', y > 40);
-    if (!document.body.classList.contains('is-menu-open')) {
-      if (y > 400 && y > lastY + 1) header.classList.add('is-hidden');
-      else if (y < lastY - 1 || y <= 400) header.classList.remove('is-hidden');
-    }
-    lastY = y;
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -64,7 +57,7 @@
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
     menu.setAttribute('aria-hidden', String(!open));
-    if (open) { menu.classList.add('is-open'); header.classList.remove('is-hidden'); if (lenis) lenis.stop(); }
+    if (open) { menu.classList.add('is-open'); if (lenis) lenis.stop(); }
     else if (lenis) lenis.start();
     if (menuTl) {
       if (open) menuTl.timeScale(1).play();

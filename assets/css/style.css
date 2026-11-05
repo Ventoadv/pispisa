@@ -108,15 +108,13 @@ figure { margin: 0; }
 .pp-mask img { width: 100%; height: 100%; object-fit: cover; transform-origin: 62% 50%; }
 
 /* ==========================================================
-   HEADER · sticky, nasconde/mostra in base allo scroll
+   HEADER · sempre visibile
    ========================================================== */
 .pp-header {
   position: fixed; inset: 0 0 auto 0; z-index: 100;
   padding-top: 14px;
   pointer-events: none;
-  transition: transform .5s var(--pp-ease);
 }
-.pp-header.is-hidden { transform: translateY(-130%); }
 /* Pillola "liquid glass" */
 .pp-header__inner {
   --mx: 30%;
