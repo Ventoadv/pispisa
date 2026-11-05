@@ -14,6 +14,7 @@ Ogni `<section class="el-section">` diventa un **Container** di primo livello. L
 | `--pp-light` / `--pp-soft` | Sfondi sezioni (grigio chiarissimo) | #F6F6F6 / #F4F4F4 |
 | `--pp-font-head` | Font primario (titoli) | Poppins 600–800 |
 | `--pp-font-body` | Font testo | Montserrat 400–600 |
+| `--pp-font-display` | Font H1 (simile al logo) | Montserrat 600, corsivo 600 |
 
 Breakpoint: tablet 1024, mobile 767 (uguali ai default Elementor).
 

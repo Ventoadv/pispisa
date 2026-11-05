@@ -18,6 +18,7 @@
   /* Global Fonts */
   --pp-font-head: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
   --pp-font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --pp-font-display: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --pp-radius: 22px;
   --pp-radius-sm: 12px;
@@ -196,7 +197,7 @@ figure { margin: 0; }
    ========================================================== */
 .pp-hero { min-height: 100svh; padding: calc(var(--pp-header-h) + 40px) 0 80px; display: flex; align-items: center; background: linear-gradient(180deg, var(--pp-light) 0%, #fff 100%); overflow: hidden; }
 .pp-hero__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
-.pp-hero__title { font-size: clamp(42px, 5.2vw, 78px); font-weight: 700; letter-spacing: -.035em; margin-bottom: 26px; }
+.pp-hero__title { font-family: var(--pp-font-display); font-size: clamp(38px, 4.7vw, 72px); font-weight: 600; line-height: 1.12; letter-spacing: -.02em; margin-bottom: 26px; }
 .pp-hero__subtitle { font-family: var(--pp-font-body); font-size: clamp(17px, 1.5vw, 21px); font-weight: 500; line-height: 1.55; letter-spacing: 0; color: var(--pp-text); max-width: 34ch; margin-bottom: 36px; }
 .pp-hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 56px; }
 .pp-hero__facts { display: flex; gap: clamp(24px, 4vw, 56px); padding-top: 28px; border-top: 1px solid var(--pp-line); }
