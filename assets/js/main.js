@@ -45,30 +45,60 @@
   var burger = document.querySelector('.pp-burger');
   var menu = document.getElementById('pp-menu');
   var menuTl = null;
-  if (hasGSAP && menu) {
-    menuTl = gsap.timeline({ paused: true, defaults: { ease: 'expo.inOut' } })
-      .to('.pp-menu__bg', { clipPath: 'circle(150% at 48px 42px)', duration: 1 })
-      .from('.pp-menu__nav a', { yPercent: 120, opacity: 0, stagger: .06, duration: .8, ease: 'expo.out' }, '-=.45')
-      .from('.pp-menu__aside > *', { y: 30, opacity: 0, stagger: .06, duration: .6, ease: 'power3.out' }, '-=.6');
+  /* Cerchio di apertura calcolato dal centro del burger, abbastanza grande da coprire tutto lo schermo */
+  function menuCircle(open) {
+    var b = burger.getBoundingClientRect();
+    var cx = b.left + b.width / 2;
+    var cy = b.top + b.height / 2;
+    var r = open ? Math.ceil(Math.hypot(Math.max(cx, window.innerWidth - cx), Math.max(cy, window.innerHeight - cy))) : 0;
+    return 'circle(' + r + 'px at ' + cx + 'px ' + cy + 'px)';
   }
-  function setMenu(open) {
+  function menuFocusables() {
+    return [burger].concat(Array.prototype.slice.call(menu.querySelectorAll('a[href], button')));
+  }
+  function setMenu(open, viaKeyboard) {
     if (!menu) return;
+    var bg = menu.querySelector('.pp-menu__bg');
+    var items = menu.querySelectorAll('.pp-menu__nav a, .pp-menu__aside > *');
     document.body.classList.toggle('is-menu-open', open);
+    root.classList.toggle('is-menu-lock', open);
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
     menu.setAttribute('aria-hidden', String(!open));
-    if (open) { menu.classList.add('is-open'); if (lenis) lenis.stop(); }
-    else if (lenis) lenis.start();
-    if (menuTl) {
-      if (open) menuTl.timeScale(1).play();
-      else menuTl.timeScale(1.6).reverse().eventCallback('onReverseComplete', function () { menu.classList.remove('is-open'); });
-    } else {
-      menu.querySelector('.pp-menu__bg').style.clipPath = open ? 'circle(150% at 48px 42px)' : '';
-      if (!open) menu.classList.remove('is-open');
+    if (lenis) { if (open) lenis.stop(); else lenis.start(); }
+    if (menuTl) menuTl.kill();
+    menuTl = null;
+    if (open) {
+      menu.classList.add('is-open');
+      menu.querySelector('.pp-menu__inner').scrollTop = 0;
     }
+    var finishClose = function () { menu.classList.remove('is-open'); bg.style.clipPath = ''; if (hasGSAP) gsap.set(items, { clearProps: 'all' }); };
+    if (!hasGSAP || reduceMotion) {
+      bg.style.clipPath = menuCircle(open);
+      if (!open) finishClose();
+    } else if (open) {
+      menuTl = gsap.timeline()
+        .fromTo(bg, { clipPath: menuCircle(false) }, { clipPath: menuCircle(true), duration: .9, ease: 'expo.inOut' })
+        .fromTo(items, { y: 30, opacity: 0 }, { y: 0, opacity: 1, stagger: .05, duration: .7, ease: 'expo.out', clearProps: 'transform,opacity' }, '-=.45');
+    } else {
+      menuTl = gsap.timeline({ onComplete: finishClose })
+        .to(items, { opacity: 0, duration: .2, ease: 'power2.out' })
+        .to(bg, { clipPath: menuCircle(false), duration: .55, ease: 'expo.inOut' }, 0);
+    }
+    if (open) { var first = viaKeyboard ? menu.querySelector('a[href]') : menu; if (first) first.focus({ preventScroll: true }); }
+    else if (document.activeElement && menu.contains(document.activeElement)) burger.focus({ preventScroll: true });
   }
-  if (burger) burger.addEventListener('click', function () { setMenu(!document.body.classList.contains('is-menu-open')); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.body.classList.contains('is-menu-open')) setMenu(false); });
+  if (burger) burger.addEventListener('click', function (e) { setMenu(!document.body.classList.contains('is-menu-open'), e.detail === 0); });
+  document.addEventListener('keydown', function (e) {
+    if (!document.body.classList.contains('is-menu-open')) return;
+    if (e.key === 'Escape') { setMenu(false); burger.focus({ preventScroll: true }); return; }
+    if (e.key !== 'Tab') return;
+    var list = menuFocusables();
+    var i = list.indexOf(document.activeElement);
+    var next = e.shiftKey ? (i <= 0 ? list.length - 1 : i - 1) : (i === list.length - 1 ? 0 : i + 1);
+    e.preventDefault();
+    list[next].focus();
+  });
 
   /* ---------- Ancore interne ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
@@ -137,7 +167,7 @@
     .from('.pp-hero__subtitle, .pp-hero__ctas, .pp-hero__facts', { y: 30, opacity: 0, duration: 1, stagger: .1 }, '-=.9')
     .from('.pp-hero__img', { scale: .6, rotate: -12, opacity: 0, duration: 1.6, ease: 'expo.out' }, .3)
     .from('.pp-hero__img img', { scale: 1.5, duration: 2, ease: 'expo.out' }, .3)
-    .from('.pp-hero__ring', { rotate: -90, scale: .5, opacity: 0, duration: 1.8 }, .5)
+    .from('.pp-hero__ring', { scale: .7, opacity: 0, duration: 1.6 }, .5)
     .from('.pp-hero__badge', { x: -40, opacity: 0, duration: 1 }, '-=1.2');
 
   /* Contatori */
@@ -149,8 +179,9 @@
   /* HERO: parallax in uscita */
   gsap.to('.pp-hero__img', { yPercent: 14, ease: 'none', scrollTrigger: { trigger: '.pp-hero', start: 'top top', end: 'bottom top', scrub: true } });
   gsap.fromTo('.pp-hero__img img', { scale: 1 }, { scale: 1.15, ease: 'none', immediateRender: false, scrollTrigger: { trigger: '.pp-hero', start: 'top top', end: 'bottom top', scrub: true } });
-  gsap.to('.pp-hero__ring', { rotate: 50, yPercent: -20, ease: 'none', scrollTrigger: { trigger: '.pp-hero', start: 'top top', end: 'bottom top', scrub: true } });
-  gsap.fromTo('.pp-hero__ring', { y: -10 }, { y: 10, duration: 4, ease: 'sine.inOut', repeat: -1, yoyo: true });
+  gsap.to('.pp-hero__ring', { yPercent: -35, ease: 'none', scrollTrigger: { trigger: '.pp-hero', start: 'top top', end: 'bottom top', scrub: 1.2 } });
+  gsap.fromTo('.pp-hero__ring', { y: -10 }, { y: 10, duration: 3.6, ease: 'sine.inOut', repeat: -1, yoyo: true });
+  gsap.fromTo('.pp-hero__ring', { x: -6 }, { x: 6, duration: 5.2, ease: 'sine.inOut', repeat: -1, yoyo: true });
   gsap.to('.pp-hero__content', { yPercent: -10, opacity: .3, ease: 'none', scrollTrigger: { trigger: '.pp-hero', start: 'center center', end: 'bottom top', scrub: true } });
 
   /* Header: riflesso del vetro che segue il puntatore */

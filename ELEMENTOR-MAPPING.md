@@ -28,7 +28,7 @@ Breakpoint: tablet 1024, mobile 767 (uguali ai default Elementor).
 |---|---|---|---|
 | H | Header `pp-header` | Theme Builder > Header, Container 3 colonne a pillola con effetto liquid glass (CSS personalizzato: `.pp-header__inner`). *Effetti di movimento > Sticky: In alto*, senza nascondere l'header allo scroll | Off-Canvas (trigger hamburger), Site Logo, Pulsante, Icon Box (telefono) |
 | M | Menu `pp-menu` | Widget **Off-Canvas** (Elementor 3.2x) a tutto schermo, oppure Popup full-screen | Nav Menu verticale, Icon List (negozi), Pulsante |
-| 1 | Hero `pp-hero` | Container 2 colonne | Heading H1 (`pp-hero__title pp-split`), Heading H2, 2 Pulsanti, 3 Counter, Immagine con maschera (`pp-hero__img`), Icon Box (badge 1966) |
+| 1 | Hero `pp-hero` | Container 2 colonne. Su tablet e mobile mettere per primo il container dell'immagine (*Avanzate > Ordine personalizzato*) e nascondere su mobile la linea prima dell'intestazione | Heading H1 (`pp-hero__title pp-split`), Heading H2, 2 Pulsanti, 3 Counter, Immagine con maschera (`pp-hero__img`), Icon Box (badge 1966) |
 | – | Nastro `pp-marquee` | Container full width rosso | Widget HTML o Testo (animazione CSS inclusa) |
 | 2 | Servizi `pp-services` | Container con classe `pp-services`; dentro `pp-services__viewport` > `pp-services__track` > card `pp-card` | **Loop Carousel** / Carousel per le card (su mobile swipe). Lo scroll orizzontale "pinnato" su desktop è gestito da `main.js` (ScrollTrigger) |
 | B1–B3 | Interruzioni `pp-break` | Container full width, altezza min 78vh, *Sfondo: immagine*, *Overlay sfondo: colore/gradiente + opacità*, *Effetti di movimento > Scorrimento verticale* (parallax nativo) | Heading display |
