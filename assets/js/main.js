@@ -150,6 +150,7 @@
   gsap.to('.pp-hero__img', { yPercent: 14, ease: 'none', scrollTrigger: { trigger: '.pp-hero', start: 'top top', end: 'bottom top', scrub: true } });
   gsap.fromTo('.pp-hero__img img', { scale: 1 }, { scale: 1.15, ease: 'none', immediateRender: false, scrollTrigger: { trigger: '.pp-hero', start: 'top top', end: 'bottom top', scrub: true } });
   gsap.to('.pp-hero__ring', { rotate: 50, yPercent: -20, ease: 'none', scrollTrigger: { trigger: '.pp-hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.fromTo('.pp-hero__ring', { y: -10 }, { y: 10, duration: 4, ease: 'sine.inOut', repeat: -1, yoyo: true });
   gsap.to('.pp-hero__content', { yPercent: -10, opacity: .3, ease: 'none', scrollTrigger: { trigger: '.pp-hero', start: 'center center', end: 'bottom top', scrub: true } });
 
   /* Header: riflesso del vetro che segue il puntatore */

@@ -204,8 +204,9 @@ figure { margin: 0; }
 .pp-hero__facts span { font-size: 13px; color: var(--pp-text); }
 .pp-hero__media { position: relative; }
 .pp-hero__img { width: 100%; max-width: 640px; margin-left: auto; }
-.pp-hero__ring { position: absolute; width: 74%; height: 74%; right: -14%; top: -12%; color: var(--pp-logo-red); opacity: .1; pointer-events: none; }
+.pp-hero__ring { position: absolute; z-index: 2; width: 42%; height: 42%; right: -5%; top: -8%; color: var(--pp-logo-red); pointer-events: none; }
 .pp-hero__badge {
+  z-index: 3;
   position: absolute; left: 0; bottom: 8%;
   display: flex; align-items: center; gap: 14px;
   background: #fff; padding: 16px 22px 16px 16px; border-radius: 999px;
@@ -418,6 +419,7 @@ figure { margin: 0; }
 }
 @media (max-width: 767px) {
   :root { --pp-header-h: 80px; }
+  .pp-hero__ring { width: 35%; height: 35%; right: 0; top: -4%; }
   .pp-marquee__track { animation-duration: 50s; }
   .pp-header { padding-top: 10px; }
   .pp-header__inner, .pp-header.is-scrolled .pp-header__inner { height: 60px; padding: 0 8px; gap: 8px; }
