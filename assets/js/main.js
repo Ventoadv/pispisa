@@ -182,21 +182,6 @@
     });
   }
 
-  /* Marquee: velocità legata allo scroll */
-  var marquee = document.querySelector('.pp-marquee__track');
-  if (marquee) {
-    marquee.style.animation = 'none';
-    var loop = gsap.to(marquee, { xPercent: -50, ease: 'none', duration: 38, repeat: -1, force3D: true });
-    ScrollTrigger.create({
-      trigger: '.pp-marquee', start: 'top bottom', end: 'bottom top',
-      onUpdate: function (self) {
-        var target = 1 + Math.min(Math.abs(self.getVelocity()) / 500, 2.5);
-        gsap.to(loop, { timeScale: target, duration: .4, ease: 'power2.out', overwrite: true,
-          onComplete: function () { gsap.to(loop, { timeScale: 1, duration: 1.4, ease: 'power2.out', overwrite: true }); } });
-      }
-    });
-  }
-
   /* ---------- Reveal generici ---------- */
   gsap.utils.toArray('.pp-eyebrow:not(.pp-hero__eyebrow), .pp-h2, .pp-section-head__lead, .pp-about__text, .pp-services__head-right p, .pp-faq__intro p, .pp-faq__intro .pp-btn, .pp-about__content > .pp-btn').forEach(function (el) {
     gsap.from(el, { y: 40, opacity: 0, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
