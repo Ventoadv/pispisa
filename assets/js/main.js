@@ -162,9 +162,15 @@
   /* Marquee: velocità legata allo scroll */
   var marquee = document.querySelector('.pp-marquee__track');
   if (marquee) {
+    marquee.style.animation = 'none';
+    var loop = gsap.to(marquee, { xPercent: -50, ease: 'none', duration: 38, repeat: -1, force3D: true });
     ScrollTrigger.create({
       trigger: '.pp-marquee', start: 'top bottom', end: 'bottom top',
-      onUpdate: function (self) { marquee.style.animationDuration = Math.max(12, 38 - Math.abs(self.getVelocity()) / 60) + 's'; }
+      onUpdate: function (self) {
+        var target = 1 + Math.min(Math.abs(self.getVelocity()) / 500, 2.5);
+        gsap.to(loop, { timeScale: target, duration: .4, ease: 'power2.out', overwrite: true,
+          onComplete: function () { gsap.to(loop, { timeScale: 1, duration: 1.4, ease: 'power2.out', overwrite: true }); } });
+      }
     });
   }
 

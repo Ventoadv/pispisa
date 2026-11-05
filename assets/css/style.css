@@ -41,7 +41,7 @@ body {
   line-height: 1.65;
   color: var(--pp-text);
   background: var(--pp-white);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 body.is-menu-open { overflow: hidden; }
@@ -208,6 +208,7 @@ figure { margin: 0; }
 .pp-marquee span { font-family: var(--pp-font-head); font-weight: 600; font-size: clamp(18px, 2vw, 26px); white-space: nowrap; }
 .pp-marquee i { width: 12px; height: 12px; border-radius: 50%; border: 3px solid #fff; flex: none; }
 @keyframes pp-marquee { to { transform: translateX(-50%); } }
+.pp-marquee__track { will-change: transform; backface-visibility: hidden; }
 
 /* ==========================================================
    SERVIZI · carosello a scroll orizzontale
@@ -436,3 +437,6 @@ figure { margin: 0; }
 .pp-store__city { display: inline-flex; align-items: center; gap: 6px; }
 .pp-store__label { display: flex; align-items: center; gap: 8px; font-family: var(--pp-font-head); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--pp-ink); margin: 0 0 4px; }
 .pp-store__label .pp-ic { color: var(--pp-red); }
+
+/* Evita lo sbordo orizzontale della fascia ruotata senza rompere gli sticky */
+html { overflow-x: clip; }
