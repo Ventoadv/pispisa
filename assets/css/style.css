@@ -413,7 +413,7 @@ figure { margin: 0; }
 }
 /* Servizi su touch / schermi stretti: carosello swipe nativo con scroll-snap */
 @media (max-width: 1024px), (hover: none) {
-  .pp-services__viewport { overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .pp-services__viewport { overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--pp-gutter); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .pp-services__viewport::-webkit-scrollbar { display: none; }
   .pp-card { scroll-snap-align: start; }
   .pp-services__track { padding-block: 20px 30px; }
@@ -466,3 +466,18 @@ figure { margin: 0; }
 
 /* Evita lo sbordo orizzontale della fascia ruotata senza rompere gli sticky */
 html { overflow-x: clip; }
+
+/* Servizi con pin (desktop con mouse): tutto il blocco entra in altezza sotto la pillola */
+@media (min-width: 1025px) and (hover: hover) {
+  .pp-services { padding: 0; }
+  .pp-services__pin { box-sizing: border-box; height: 100vh; height: 100svh; padding: calc(var(--pp-header-h) + 8px) 0 16px; gap: clamp(6px, 1.6vh, 24px); }
+  .pp-services .pp-h2 { font-size: clamp(28px, min(4.2vw, 6.2vh), 60px); }
+  .pp-services__head-right p { margin-bottom: clamp(10px, 2vh, 24px); font-size: clamp(14px, 1.9vh, 16px); }
+  .pp-services__viewport { padding: 12px 0 28px; }
+  .pp-card { width: clamp(260px, min(26vw, 42vh), 360px); }
+  .pp-card__img { aspect-ratio: auto; height: clamp(104px, 22vh, 260px); }
+  .pp-card__body { padding: 38px 24px 18px; }
+  .pp-card__num { margin-bottom: 6px; }
+  .pp-card h3 { font-size: clamp(18px, 2.5vh, 23px); margin-bottom: 6px; }
+  .pp-card p { font-size: clamp(13px, 1.7vh, 15px); line-height: 1.45; margin-bottom: 10px; }
+}

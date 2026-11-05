@@ -222,7 +222,7 @@
     vp.addEventListener('scroll', upd, { passive: true }); upd();
     return function () { vp.removeEventListener('scroll', upd); };
   });
-  gsap.from('.pp-card', { y: 80, opacity: 0, duration: 1.1, stagger: .08, ease: 'expo.out', scrollTrigger: { trigger: '.pp-services__viewport', start: 'top 85%' } });
+  gsap.fromTo('.pp-card', { y: 80, opacity: 0, transition: 'none' }, { y: 0, opacity: 1, duration: 1.1, stagger: .08, ease: 'expo.out', clearProps: 'transform,transition', scrollTrigger: { trigger: '.pp-services__viewport', start: 'top 85%' } });
 
   /* ---------- CHI SIAMO ---------- */
   gsap.from('.pp-about__img', { scale: .75, rotate: 10, opacity: 0, duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: '.pp-about', start: 'top 70%' } });
@@ -249,4 +249,5 @@
   gsap.from('.pp-footer__cols > div', { y: 30, opacity: 0, duration: 1, stagger: .08, ease: 'expo.out', scrollTrigger: { trigger: '.pp-footer', start: 'top 85%' } });
 
   window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
 })();
