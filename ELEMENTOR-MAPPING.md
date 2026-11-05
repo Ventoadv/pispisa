@@ -18,9 +18,9 @@ Ogni `<section class="el-section">` diventa un **Container** di primo livello. L
 Breakpoint: tablet 1024, mobile 767 (uguali ai default Elementor).
 
 ## Logo e maschere
-- `assets/img/logo-icon.svg` (rosso) e `logo-icon-white.svg`: logo icona "O'" vettoriale, da usare in Site Logo / Icona SVG personalizzata.
-- `assets/img/logo-mask.svg`: sagoma piena del logo. In Elementor: widget **Immagine > Stile > Maschera > Forma: Personalizzata** → caricare `logo-mask.svg`, Dimensione: Adatta, Posizione: Centro. Stesso effetto della classe `.pp-mask`.
-- Il lettering "PISPISA l'OTTICO" nell'header è testo provvisorio: sostituire con il logotipo ufficiale in SVG.
+- `assets/img/logo-pispisa.svg` (rosso, due righe) e `logo-pispisa-white.svg` (bianco, per sfondi scuri): logo ufficiale, da usare in Site Logo. Convertiti dagli EPS forniti dal cliente, con il rosso portato a #E30613.
+- `assets/img/logo-icon.svg` (rosso) e `logo-icon-white.svg`: icona ufficiale "l'O" vettoriale, da usare come Icona SVG personalizzata.
+- `assets/img/logo-mask.svg`: sagoma ricavata dall'icona ufficiale (apostrofo + O piena, senza la "l"). In Elementor: widget **Immagine > Stile > Maschera > Forma: Personalizzata** → caricare `logo-mask.svg`, Dimensione: Adatta, Posizione: Centro. Stesso effetto della classe `.pp-mask`.
 
 ## Sezioni
 | # | Sezione (classe) | Struttura Elementor | Widget nativi |
@@ -54,4 +54,4 @@ File SVG in `assets/icons/`. In Elementor usare il widget Icona o Icon Box con "
 
 ## Da fornire / verificare
 - Foto reali (le immagini in `assets/img/*.jpg` sono segnaposto con l'etichetta del soggetto previsto).
-- Logotipo ufficiale SVG, P.IVA, link Instagram/YouTube/LinkedIn, testi FAQ definitivi.
+- P.IVA, link Instagram/YouTube/LinkedIn, testi FAQ definitivi.
